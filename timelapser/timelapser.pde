@@ -1,13 +1,15 @@
 /*
-  A quick Processing sketch to shoot time lapsed images.
-  Use the 
+  A quick Processing sketch to shoot time lapsed images with a webcam.
+  Use the time lapse parameters to choose which webcam to use, shooting interval, etc.
+  
+  https://github.com/garciadelcastillo/Time-Lapser-for-Processing
 */
 
 // Time lapse parameters
-int cameraNum = 85;                      // choose shich webcam to use from the array of available ones
-int shootEvery = 1000;                  // in millis
-boolean showImageOnScreen = false;       // display shot image on window? false will make the sketch faster
-String fileFormat = "jpg";              // png, jpg, tiff... 
+int cameraNum = 0;                       // choose shich webcam to use from the array of available ones
+int shootEvery = 1000;                   // in millis
+boolean showImageOnScreen = true;        // display shot image on window? false will make the sketch faster
+String fileFormat = "jpg";               // png, jpg, tiff... 
 
 // Sketch variables
 PImage lastShot; 
@@ -67,7 +69,7 @@ void draw() {
     shotTime += shootEvery;  // try to stick to the pace as much as possible 
     takeShot = false;
     
-    println("Saved " + fileName); 
+    println("Saved: " + fileName); 
   }
   
   if (showImageOnScreen) {
