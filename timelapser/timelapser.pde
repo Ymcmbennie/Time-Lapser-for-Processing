@@ -1,10 +1,15 @@
+/*
+  A quick Processing sketch to shoot time lapsed images.
+  Use the 
+*/
 
+// Time lapse parameters
 int cameraNum = 85;                      // choose shich webcam to use from the array of available ones
 int shootEvery = 1000;                  // in millis
 boolean showImageOnScreen = false;       // display shot image on window? false will make the sketch faster
 String fileFormat = "jpg";              // png, jpg, tiff... 
 
-
+// Sketch variables
 PImage lastShot; 
 long time, shotTime;
 boolean takeShot = false;
@@ -66,6 +71,6 @@ void draw() {
   }
   
   if (showImageOnScreen) {
-    image(cam, 0, 0, width, height);
+    image(lastShot, 0, 0, width, height);
   }
 }
